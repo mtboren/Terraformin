@@ -4,7 +4,7 @@
     "features": {
         "ghcr.io/devcontainers/features/powershell:latest": {
             "version": "latest",
-            "modules": "posh-git" // posh-git is a a great module for git-related prompt displays
+            "modules": ["posh-git", "TerraformUtil"] // posh-git is a a great module for git-related prompt displays, TerraformUtil is useful for some Terraform things, including a function for registering argument completers for terraform binary itself
         },
         "ghcr.io/devcontainers/features/terraform:1": {"installTerraformDocs": true}
     },
