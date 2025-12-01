@@ -1,2 +1,20 @@
 # Terraform local directory
 .terraform/
+
+# Local TF state
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+
+# Backup files
+*.backup
+
+# Logs
+*.log
+
+# CLI config (may contain credentials)
+.terraformrc
+
+# State environments
+*.tfstate.d/
+
