@@ -6,7 +6,8 @@
             "version": "latest",
             "modules": ["posh-git", "TerraformUtil"] // posh-git is a a great module for git-related prompt displays, TerraformUtil is useful for some Terraform things, including a function for registering argument completers for terraform binary itself
         },
-        "ghcr.io/devcontainers/features/terraform:1": {"installTerraformDocs": true}
+        "ghcr.io/devcontainers/features/terraform:latest": {"installTerraformDocs": true},
+        "ghcr.io/devcontainers/features/aws-cli:latest": {}
     },
     "customizations": {
         "vscode": {
@@ -18,5 +19,5 @@
         }
     },
     // add posh-git to the PowerShell profile
-    "postCreateCommand": "pwsh -Command 'Add-PoshGitToProfile'"
+    "postCreateCommand": "pwsh -Command 'Add-PoshGitToProfile; Add-Content -Path $PROFILE.CurrentUserAllHosts -Value Register-TFArgumentCompleter'"
 }
