@@ -7,13 +7,18 @@
             "modules": ["posh-git", "TerraformUtil"] // posh-git is a a great module for git-related prompt displays, TerraformUtil is useful for some Terraform things, including a function for registering argument completers for terraform binary itself
         },
         "ghcr.io/devcontainers/features/terraform:latest": {"installTerraformDocs": true},
-        "ghcr.io/devcontainers/features/aws-cli:latest": {}
+        "ghcr.io/devcontainers/features/aws-cli:latest": {},
+		"ghcr.io/devcontainers/features/azure-cli:latest": {"installBicep": true}        
     },
     "customizations": {
         "vscode": {
             "settings": {
                 // default to using PowerShell as the shell
                 "terminal.integrated.defaultProfile.linux": "pwsh",
+                // disable shell suggestions for now -- they interfere with proper tab completion atm
+                "terminal.integrated.suggest.enabled": false,
+                // disable setting of focus to integrated terminal upon "F8 execute" from editor pane
+                "powershell.integratedConsole.focusConsoleOnExecute": false,
                 "editor.wordWrap": "on"
             }
         }
