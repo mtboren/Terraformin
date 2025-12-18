@@ -30,3 +30,11 @@ terraform apply
 terraform show
 terraform state list
 #endregion
+
+
+#region variables things, https://developer.hashicorp.com/terraform/tutorials/azure-get-started/azure-variables
+## override variables via CLI
+terraform apply -var "resource_group_name=myShtRG"
+#endregion
+
+
