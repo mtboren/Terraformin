@@ -24,3 +24,4 @@ Some key topics:
     - can include "validation" on variable values via `validation` property in variable declaration; somewhat like constraints in CloudFormation template parameters
 - `terraform console` opens an interactive console with which to evaluate expressions in the context of your configuration
 - Interpolate variables in strings:  Terraform configuration supports string interpolation, using `${var.blahh}` syntax; can use variables, local values, and the output of functions to create such strings
+- `terraform output` for querying outputs from the plan, and get "unmask" sensitive items via `-json` parameter or by querying specific output by name
