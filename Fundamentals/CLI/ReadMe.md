@@ -15,7 +15,9 @@ Some key topics:
     - **Note**: per the guide, _Never commit .tfvars files to version control_ -- this might apply only to vars files with sensitive data in them; one practice is to make `terraform.tfvars.example` file with dummy values, for others' info
 - `terraform apply` for actually applying plan
     - > Use the `-replace` argument when a resource has become unhealthy or stops working in ways that are outside of Terraform's control
+    - > Use Terraform's `-target` option to target specific resources, modules, or collections of resources
 - `terraform state list` to show resources in the config
+        - this target focus can also be used for `-destroy` operations
 - Variables declarations:
     - > ...can appear anywhere in your configuration files. However, we recommend putting them into a separate file called variables.tf to make it easier for users to understand how they can customize the configuration
     - > ...must be literal values, and cannot use computed values like resource attributes, expressions, or other variables
@@ -25,3 +27,4 @@ Some key topics:
 - `terraform console` opens an interactive console with which to evaluate expressions in the context of your configuration
 - Interpolate variables in strings:  Terraform configuration supports string interpolation, using `${var.blahh}` syntax; can use variables, local values, and the output of functions to create such strings
 - `terraform output` for querying outputs from the plan, and get "unmask" sensitive items via `-json` parameter or by querying specific output by name
+- `terraform refresh` for updating the state file (say, useful for when state file no longer reflects reality of deployed resources)
